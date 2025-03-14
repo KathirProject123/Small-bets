@@ -41,7 +41,9 @@ function Register() {
         } else {
             console.log("Signup data", data);
             alert("Registration successful!");
-            navigate("/login");
+            setTimeout(() => {
+                navigate("/login");
+            }, 1500); // Adjust the delay time (1500 ms = 1.5 seconds)
         }
     };
 
@@ -57,8 +59,8 @@ function Register() {
                 <input type="number" name="year" placeholder="Year of Passing" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button type="submit">Register</button>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
-            <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
     );
 }

@@ -8,8 +8,9 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} /> 
                 <Route path="/dashboard" element={<Dashboard />} /> {/* Make sure Dashboard is imported correctly */}
             </Routes>
         </Router>

@@ -53,6 +53,7 @@ function Register() {
                 <input type="number" name="year" placeholder="Year of Passing" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button type="submit">Register</button>
+                <p><a href="/Login">Login</a></p>
             </form>
         </div>
     );

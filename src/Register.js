@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { supabase } from "./supabaseClient"; // We’ll set this up next
 
@@ -12,6 +13,8 @@ function Register() {
         year: "",
         password: ""
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,6 +41,7 @@ function Register() {
         } else {
             console.log("Signup data", data);
             alert("Registration successful!");
+            navigate("/login");
         }
     };
 
@@ -53,9 +57,10 @@ function Register() {
                 <input type="number" name="year" placeholder="Year of Passing" onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
                 <button type="submit">Register</button>
-                <p><a href="/Login">Login</a></p>
             </form>
+            <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
     );
 }
+
 export default Register;

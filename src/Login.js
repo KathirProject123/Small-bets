@@ -21,8 +21,9 @@ function Login() {
         if (error) {
             setError(error.message);
         } else {
+            console.log("User data:", user); // Log the user data
             alert("Login successful!");
-            navigate("/dashboard"); // Redirect after successful login
+            navigate("/dashboard"); // Redirect after login
         }
     };
 

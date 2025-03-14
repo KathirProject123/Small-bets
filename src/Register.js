@@ -36,6 +36,7 @@ function Register() {
         if (error) {
             alert(error.message);
         } else {
+            console.log("Signup data", data);
             alert("Registration successful!");
         }
     };
